@@ -11,30 +11,34 @@
     <header>
       <!--Nav means a section of page containning navigation links, 
         either to other pages, or other sections-->
-      <nav>
-        <ul>
-          <!-- listed items are href just meaning that they have embedded hyperlinks in them,
-          where the link the text leads to is determined by the link inside the string
-          Note that for fresh sites, you have to use https://www
-          Otherwise, if I just had google.com, the hyperlink would lead to websitedomain/google.com-->
-          <li><a href="">Home</a></li>
-          <li><a href="">Education</a></li>
-          <li><a href="">Projects</a></li>
-          <li>
-            <a href="https://www.linkedin.com/in/rduong08" target="_blank"
-              >LinkedIn</a
-            >
-          </li>
-        </ul>
-      </nav>
+      <div class="Topbar-nav-links">
+        <nav>
+          <ul>
+            <!-- listed items are href just meaning that they have embedded hyperlinks in them,
+            where the link the text leads to is determined by the link inside the string
+            Note that for fresh sites, you have to use https://www.(desiredwebsite)
+            Otherwise, if I just had google.com, the hyperlink would lead to websitedomain/google.com-->
+            <li><a href="">Home</a></li>
+            <li><a href="">Education</a></li>
+            <li><a href="">Projects</a></li>
+            <li>
+              <a href="https://www.linkedin.com/in/rduong08" target="_blank"
+                >LinkedIn</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
       <section>
         <h1>Randy Duong</h1>
-        <p>3rd year back-end software developer</p>
-        <p>sample text</p>
-        <p>sample text</p>
+        <div class="intro-text">
+          <p>3rd year back-end software developer</p>
+          <p>sample text</p>
+          <p>sample text</p>
+        </div>
         <form id="testform" onsubmit="console.log('testinghere')">
           <input type="submit" value="sub" />
         </form>
