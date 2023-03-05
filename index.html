@@ -42,7 +42,9 @@
               </li>
             </div>
           </div>
-          <button id="mode-button">Dark Mode</button>
+          <form id="mode-button" onsubmit="toggleDarkMode(event, this)">
+            <input type="submit" value="Dark Mode" />
+          </form>
         </div>
       </div>
     </header>
