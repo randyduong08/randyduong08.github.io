@@ -18,10 +18,4 @@ function toggleDarkMode(event, form) {
     else{
         modeButton.value = 'Dark Mode';
     }
-
   }
-/*
-const modeButton = document.getElementById("mode-button");
-
-modeButton.addEventListener('click', toggleDarkMode);
-*/
