@@ -8,16 +8,17 @@ footer{
 }
 
 .footer-text {
-    margin: 2px 0;
-  }
+  margin: 2px 0;
+}
 
-  main{
-    padding-top: 200px;
-  }
+main{
+  padding-top: 200px;
+}
 
-  /* fix button to the top-right of the page */
-  #mode-button {
-    position: fixed;
-    top: 0;
-    right: 0;
-  }
+
+/* fix button to the top-right of the page */
+#mode-button {
+  position: fixed;
+  top: 0;
+  right: 0;
+}

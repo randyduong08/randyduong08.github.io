@@ -3,19 +3,27 @@ function redirectToProjects(event){
     window.location.href = "projects.html";
 }
 
-function toggleDarkMode(event, form) {
-    event.preventDefault();
-    const body = document.body;
-    const headerFooter = document.querySelectorAll('.header-footer');
-    const modeButton = form.querySelector('input[type="submit"]');
-    
-    body.classList.toggle('dark');
-    headerFooter.forEach(tag => tag.classList.toggle('dark-header-footer'));
+function toggleTheme(){
+    var style = document.getElementById("style");
+    if (style.href.match("light.css")){
+        style.href = "dark.css";
+    } else{
+        style.href = "light.css";
+    }
+}
 
-    if (modeButton.value === 'Dark Mode'){
-        modeButton.value = 'Light Mode';
+const modeLink = document.getElementById("switch-theme");
+let mode = "dark";
+
+modeLink.addEventListener("click", () => {
+    if (mode == "dark"){
+        modeLink.textContent = "Light Mode";
+        mode = "light";
+    } 
+    else {
+        modeLink.textContent = "Dark Mode";    
+        mode = "dark";
     }
-    else{
-        modeButton.value = 'Dark Mode';
-    }
-  }
+    toggleTheme();
+});
+

@@ -4,9 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="light.css" />
-    <link rel="stylesheet" href="dark.css" />
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link id="style" rel="stylesheet" type="text/css" href="light.css" />
     <title>Randy Duong</title>
     <!--Link below this are from bootstrap through CDN-->
     <link
@@ -16,6 +15,7 @@
       crossorigin="anonymous"
     />
   </head>
+
   <body>
     <header class="header-footer">
       <!--Nav means a section of page containning navigation links, 
@@ -28,25 +28,23 @@
               Note that for fresh sites, you have to use https://www.(desiredwebsite)
               Otherwise, if I just had google.com, the hyperlink would lead to websitedomain/google.com-->
             <div class="col">
-              <li><a href="index.html">Home</a></li>
+              <a href="index.html">Home</a>
             </div>
             <div class="col">
-              <li><a href="">Education</a></li>
+              <a href="">Education</a>
             </div>
             <div class="col">
-              <li><a href="projects.html">Projects</a></li>
+              <a href="projects.html">Projects</a>
             </div>
             <div class="col">
-              <li>
-                <a href="https://www.linkedin.com/in/rduong08" target="_blank"
-                  >LinkedIn</a
-                >
-              </li>
+              <a href="https://www.linkedin.com/in/rduong08" target="_blank"
+                >LinkedIn</a
+              >
+            </div>
+            <div class="col">
+              <a href="#" id="switch-theme">Dark Mode </a>
             </div>
           </div>
-          <form id="mode-button" onsubmit="toggleDarkMode(event, this)">
-            <input type="submit" value="Dark Mode" />
-          </form>
         </div>
       </div>
     </header>
