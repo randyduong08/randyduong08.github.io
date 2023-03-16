@@ -5,12 +5,12 @@ console.log(track);
 
 const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
 
-console.log(handleOnDown);
-
 const handleOnUp = () => {
     track.dataset.mouseDownAt = "0";
     track.dataset.prevPercentage = track.dataset.percentage;
 }
+
+console.log(track.dataset.prevPercentage);
 
 //track position of curser on mousedown
 const handleOnMove = e => {
@@ -29,11 +29,25 @@ const handleOnMove = e => {
     track.dataset.percentage = nextPercentage;
 
     track.animate({
-        transform: 'translate(${nextPercentage}%, -50%)'},
+        transform: `translate(${nextPercentage}%, 0%)`},
         { duration: 1200, fill: "forwards"});
     
     for(const image of track.getElementsByClassName("card-img-top")){
-        image.animate({objectPosition: '${100 + nextPercentage}% center'},
+        image.animate({objectPosition: `${100 + nextPercentage}% center`},
                     {duration: 1200, fill: "forwards"});
     }
 }
+
+/* actually allows u to record the mouse */
+
+window.onmousedown = e => handleOnDown(e);
+
+window.ontouchstart = e => handleOnDown(e.touches[0]);
+
+window.onmouseup = e => handleOnUp(e);
+
+window.ontouchend = e => handleOnUp(e.touches[0]);
+
+window.onmousemove = e => handleOnMove(e);
+
+window.ontouchmove = e => handleOnMove(e.touches[0]);
