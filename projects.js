@@ -1,9 +1,10 @@
+/*
     //grab the card container in project.html
 const track = document.getElementById("card-track");
 
 console.log(track);
 
-const handleOnDown = e => track.dataset.mouseDownAt = e.clientX;
+const handleOnDown = e => track.dataset.mouseDownAt = e.clientY;
 
 const handleOnUp = () => {
     track.dataset.mouseDownAt = "0";
@@ -18,8 +19,8 @@ const handleOnMove = e => {
 
     console.log('test');
 
-    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX,
-        maxDelta = window.innerWidth / 2;
+    const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientY,
+        maxDelta = window.innerHeight / 2;
     
     const percentage = (mouseDelta / maxDelta) * -100,
         nextPercentageUnconstrained = 
@@ -29,8 +30,8 @@ const handleOnMove = e => {
     track.dataset.percentage = nextPercentage;
 
     track.animate({
-        transform: `translate(${nextPercentage}%, 0%)`},
-        //transform: `translate(0%, ${nextPercentage}%)`},
+        //transform: `translate(${nextPercentage}%, 0%)`},
+        transform: `translate(0%, ${nextPercentage}%)`},
         { duration: 1200, fill: "forwards"});
     
     for(const image of track.getElementsByClassName("card-img-top")){
@@ -40,7 +41,7 @@ const handleOnMove = e => {
 }
 
 /* actually allows u to record the mouse */
-
+/*
 window.onmousedown = e => handleOnDown(e);
 
 window.ontouchstart = e => handleOnDown(e.touches[0]);
@@ -52,3 +53,5 @@ window.ontouchend = e => handleOnUp(e.touches[0]);
 window.onmousemove = e => handleOnMove(e);
 
 window.ontouchmove = e => handleOnMove(e.touches[0]);
+
+*/
