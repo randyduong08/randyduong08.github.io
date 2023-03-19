@@ -18,3 +18,5 @@ function Jumbotron() {
 </div>
     )
 }
+
+export default Jumbotron;

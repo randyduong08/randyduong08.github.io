@@ -1,0 +1,23 @@
+footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.footer-text {
+  margin: 2px 0;
+}
+
+main{
+  padding-top: 200px;
+}
+
+/* fix button to the top-right of the page */
+.top-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
