@@ -1,4 +1,5 @@
 //Main body section of index page
+import Jumbotron from "./Jumbotron";
 
 function Main(){
     return(
