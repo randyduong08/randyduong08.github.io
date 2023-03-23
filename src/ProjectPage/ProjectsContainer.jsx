@@ -1,8 +1,8 @@
-
+import pimg from '../Images/nightsky.jpg';
 
 function ProjectsContainer(){
     return(
-                <div className="scroll-container">
+        <div className="scroll-container">
         <div
             id="card-track"
             className="container"
@@ -16,7 +16,7 @@ function ProjectsContainer(){
                 {/*Project cards go here, in the middle main column*/}
                 <div className="card mb-4">
                     <img
-                    src="images/nightsky.jpg"
+                    src={pimg}
                     className="card-img-top"
                     alt="Project Image"
                     draggable="false"
@@ -37,7 +37,7 @@ function ProjectsContainer(){
                 </div>
                 <div className="card mb-4">
                     <img
-                    src="images/nightsky.jpg"
+                    src={pimg}
                     className="card-img-top"
                     alt="Project Image"
                     draggable="false"
@@ -58,7 +58,7 @@ function ProjectsContainer(){
                 </div>
                 <div className="card mb-4">
                     <img
-                    src="images/nightsky.jpg"
+                    src={pimg}
                     className="card-img-top"
                     alt="Project Image"
                     draggable="false"
