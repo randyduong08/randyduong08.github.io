@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 // Navigationbar component
 // Typically the onnly component that makes up the 'header' of a page
 function NavigationBar() {
@@ -13,9 +14,9 @@ function NavigationBar() {
             Note that for fresh sites, you have to use https://www.(desiredwebsite)
             Otherwise, if I just had google.com, the hyperlink would lead to websitedomain/google.com*/}
             <div className="col">
-            <a href="index.html" className="text-decoration-none">
+            <Link to="/" className="text-decoration-none">
                 Home
-            </a>
+            </Link>
             </div>
             <div className="col">
             <a href="" className="text-decoration-none">
@@ -23,9 +24,9 @@ function NavigationBar() {
             </a>
             </div>
             <div className="col">
-            <a href="projects.html" className="text-decoration-none">
-                Projects
-            </a>
+                <Link to ="/Projects" className="text-decoration-none">
+                    Projects
+                </Link>
             </div>
             <div className="col">
             <a
