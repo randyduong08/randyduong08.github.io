@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React from "react";
 // Navigationbar component
 // Typically the onnly component that makes up the 'header' of a page
 function NavigationBar() {
