@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import React from "react";
 // Navigationbar component
 // Typically the onnly component that makes up the 'header' of a page
 function NavigationBar() {
@@ -9,6 +10,10 @@ function NavigationBar() {
     <div className="Topbar-nav-links">
         <div className="container-fluid">
         <div className="row">
+            {/* listed items are href just meaning that they have embedded hyperlinks in them,
+            where the link the text leads to is determined by the link inside the string
+            Note that for fresh sites, you have to use https://www.(desiredwebsite)
+            Otherwise, if I just had google.com, the hyperlink would lead to websitedomain/google.com*/}
             <div className="col">
             <Link to="/" className="text-decoration-none">
                 Home

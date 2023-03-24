@@ -7,8 +7,8 @@ import Projects from './ProjectPage/ProjectApp';
 const Main = () => {
     return(
         <Routes>
-            <Route exact path='/' element={<Home/>}></Route>
-            <Route exact path='/Projects' element={<Projects/>}></Route>
+            <Route path='/' element={<Home/>}></Route>
+            <Route path='/Projects' element={<Projects/>}></Route>
         </Routes>
     );
 }

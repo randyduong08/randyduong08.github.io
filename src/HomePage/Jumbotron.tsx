@@ -1,3 +1,4 @@
+import React from "react";
 //Jumbotron component
 // Uses bootstrap jumbotron class
 
@@ -11,7 +12,10 @@ function Jumbotron() {
       <p>sample text</p>
       <p>sample text</p>
     </div>
-    <form id="mainbutton" onsubmit="redirectToProjects(event)">
+    <form id="mainbutton" onSubmit={(event) => {
+      event.preventDefault();
+      console.log('test');
+    }}>
       <input type="submit" defaultValue="Check out my projects" />
     </form>
   </div>

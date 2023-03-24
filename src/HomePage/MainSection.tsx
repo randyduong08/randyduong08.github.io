@@ -1,5 +1,6 @@
 //Main body section of index page
 import Jumbotron from "./Jumbotron";
+import React from "react";
 
 function Main(){
     return(
