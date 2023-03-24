@@ -2,6 +2,7 @@
 import Header from "./Header";
 import MainSection from "./MainSection";
 import Footer from "./Footer";
+import React from "react";
 
 function IndexApp(){
     return(
