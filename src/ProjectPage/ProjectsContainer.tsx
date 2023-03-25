@@ -19,7 +19,7 @@ function ProjectsContainer(){
                     <img
                     src={pimg}
                     className="card-img-top"
-                    alt="Project Image"
+                    alt=""
                     draggable="false"
                     />
                     <div className="card-body">
@@ -29,7 +29,7 @@ function ProjectsContainer(){
                         Sample text explaining the purpose of this project
                         </p>
                         <span className="text-right">
-                        <a href="#" className="btn btn-primary">
+                        <a href="https://www.github.com/randyduong08" className="btn btn-primary">
                             View Github
                         </a>
                         </span>
@@ -40,7 +40,7 @@ function ProjectsContainer(){
                     <img
                     src={pimg}
                     className="card-img-top"
-                    alt="Project Image"
+                    alt=""
                     draggable="false"
                     />
                     <div className="card-body">
@@ -50,7 +50,7 @@ function ProjectsContainer(){
                         Sample text explaining the purpose of this project
                         </p>
                         <span className="text-right">
-                        <a href="#" className="btn btn-primary">
+                        <a href="https://www.github.com/randyduong08" className="btn btn-primary">
                             View Github
                         </a>
                         </span>
@@ -61,7 +61,7 @@ function ProjectsContainer(){
                     <img
                     src={pimg}
                     className="card-img-top"
-                    alt="Project Image"
+                    alt=""
                     draggable="false"
                     />
                     <div className="card-body">
@@ -71,7 +71,7 @@ function ProjectsContainer(){
                         Sample text explaining the purpose of this project
                         </p>
                         <span className="text-right">
-                        <a href="#" className="btn btn-primary">
+                        <a href="https://www.github.com/randyduong08" className="btn btn-primary">
                             View Github
                         </a>
                         </span>

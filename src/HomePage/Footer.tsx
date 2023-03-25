@@ -25,6 +25,7 @@ function Footer(){
                 href="https://github.com/randyduong08"
                 className="text-decoration-none"
                 target="_blank"
+                rel="noreferrer"
               >
                 Github
               </a>
@@ -34,6 +35,7 @@ function Footer(){
                 href="https://www.linkedin.com/in/rduong08"
                 className="text-decoration-none"
                 target="_blank"
+                rel="noreferrer"
               >
                 LinkedIn
               </a>
