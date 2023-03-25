@@ -1,5 +1,6 @@
 import pimg from '../Images/nightsky.jpg';
 import React from "react";
+import GithubButton from './GithubButton';
 
 function ProjectsContainer(){
     return(
@@ -19,19 +20,20 @@ function ProjectsContainer(){
                     <img
                     src={pimg}
                     className="card-img-top"
-                    alt="Project Image"
+                    alt=""
                     draggable="false"
                     />
                     <div className="card-body">
-                    <h2 className="card-title">Project 1</h2>
+                    <h2 className="card-title">Project</h2>
                     <div className="d-flex justify-content-between align-items-center">
                         <p className="card-text">
                         Sample text explaining the purpose of this project
                         </p>
                         <span className="text-right">
-                        <a href="#" className="btn btn-primary">
-                            View Github
-                        </a>
+                            <GithubButton
+                                link="https://www.github.com/randyduong08"
+                                text="View Github"
+                            />
                         </span>
                     </div>
                     </div>
@@ -40,7 +42,7 @@ function ProjectsContainer(){
                     <img
                     src={pimg}
                     className="card-img-top"
-                    alt="Project Image"
+                    alt=""
                     draggable="false"
                     />
                     <div className="card-body">
@@ -50,7 +52,7 @@ function ProjectsContainer(){
                         Sample text explaining the purpose of this project
                         </p>
                         <span className="text-right">
-                        <a href="#" className="btn btn-primary">
+                        <a href="https://www.github.com/randyduong08" className="btn btn-primary">
                             View Github
                         </a>
                         </span>
@@ -61,7 +63,7 @@ function ProjectsContainer(){
                     <img
                     src={pimg}
                     className="card-img-top"
-                    alt="Project Image"
+                    alt=""
                     draggable="false"
                     />
                     <div className="card-body">
@@ -71,7 +73,7 @@ function ProjectsContainer(){
                         Sample text explaining the purpose of this project
                         </p>
                         <span className="text-right">
-                        <a href="#" className="btn btn-primary">
+                        <a href="https://www.github.com/randyduong08" className="btn btn-primary">
                             View Github
                         </a>
                         </span>
