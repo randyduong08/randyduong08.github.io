@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React from "react";
+import ThemeSwitcher from "src/ThemeSwitcher";
 // Navigationbar component
 // Typically the onnly component that makes up the 'header' of a page
 function NavigationBar() {
@@ -40,9 +41,7 @@ function NavigationBar() {
             </div>
             <div className="col">
             <div className="top-right">
-                <a href="#" className="text-decoration-none" id="switch-theme">
-                Dark Mode
-                </a>
+                <ThemeSwitcher/>
             </div>
             </div>
         </div>
