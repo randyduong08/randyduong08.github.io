@@ -9,7 +9,7 @@ interface Props {
 
 const GithubButton: React.FC<Props> = ({link, text}) => {
     return(
-        <a href={link} target="_blank" rel="noreferrer" className="btn btn-primary">
+        <a href={link} target="_blank" rel="noopener noreferrer" className="btn btn-primary">
             {text}
         </a>
     );
