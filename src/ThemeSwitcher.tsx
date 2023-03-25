@@ -35,3 +35,5 @@ const ThemeSwitcher: React.FC = () => {
         </button>
     );
 };
+
+export default ThemeSwitcher;
