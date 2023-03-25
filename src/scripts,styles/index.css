@@ -15,9 +15,20 @@ main{
   padding-top: 200px;
 }
 
-/* fix button to the top-right of the page */
+/* fix button to the top-right of the page -- legacy now
 .top-right {
   position: fixed;
   top: 0;
   right: 0;
+} */
+
+/* make edits to the 'Dark/Light Mode' button */
+.Topbar-nav-links .top-right button {
+  display: inline-block;
+  margin-left: auto;
+}
+
+/* make edits to the navigation bar */
+.Topbar-nav-container {
+  height: 30px;
 }

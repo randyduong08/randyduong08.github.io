@@ -8,6 +8,7 @@ function NavigationBar() {
             <>
     {/*Nav means a section of page containning navigation links, 
     either to other pages, or other sections*/}
+    <div className="Topbar-nav-container">
     <div className="Topbar-nav-links">
         <div className="container-fluid">
         <div className="row">
@@ -21,7 +22,7 @@ function NavigationBar() {
             </Link>
             </div>
             <div className="col">
-            <a href="" className="text-decoration-none">
+            <a href="https://www.google.com" className="text-decoration-none">
                 Education
             </a>
             </div>
@@ -35,6 +36,7 @@ function NavigationBar() {
                 href="https://www.linkedin.com/in/rduong08"
                 className="text-decoration-none"
                 target="_blank"
+                rel="noreferrer"
             >
                 LinkedIn
             </a>
@@ -46,6 +48,7 @@ function NavigationBar() {
             </div>
         </div>
         </div>
+    </div>
     </div>
     </>
     );
