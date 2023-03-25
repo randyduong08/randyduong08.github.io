@@ -36,7 +36,7 @@ function NavigationBar() {
                 href="https://www.linkedin.com/in/rduong08"
                 className="text-decoration-none"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
             >
                 LinkedIn
             </a>
