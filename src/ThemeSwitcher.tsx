@@ -1,25 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 type Theme = "light" | "dark";
 
 const ThemeSwitcher: React.FC = () => {
   const [theme, setTheme] = useState<Theme>("light");
 
-  useEffect(() => {
-    const savedTheme = localStorage.getItem("theme");
-    if (savedTheme) {
-      setTheme(savedTheme as Theme);
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    loadTheme();
-  };
-
-  const loadTheme = () => {
+  const loadTheme = useCallback(() => {
     const lightLink = document.querySelector('link[title="light"]');
     const darkLink = document.querySelector('link[title="dark"]');
 
@@ -30,11 +16,27 @@ const ThemeSwitcher: React.FC = () => {
       darkLink?.removeAttribute("disabled");
       lightLink?.setAttribute("disabled", "");
     }
+  }, [theme]);
+
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      setTheme(savedTheme as Theme);
+    }
+    loadTheme();
+  }, [loadTheme]);
+
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+    localStorage.setItem("theme", newTheme);
+    loadTheme();
   };
 
   useEffect(() => {
     loadTheme();
-  }, [theme]);
+  }, [loadTheme]);
 
   return (
     <button onClick={toggleTheme}>
