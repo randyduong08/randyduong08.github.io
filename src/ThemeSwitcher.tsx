@@ -16,12 +16,19 @@ const ThemeSwitcher: React.FC = () => {
     const newTheme = theme === "light" ? "dark" : "light";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
+    loadTheme();
   };
 
   const loadTheme = () => {
-    const link = document.querySelector('link[rel="stylesheet"]') as HTMLLinkElement;
-    if (link){
-        link.href = `/${theme}.css`;
+    const lightLink = document.querySelector('link[title="light"]');
+    const darkLink = document.querySelector('link[title="dark"]');
+
+    if (theme === "light"){
+      lightLink?.removeAttribute("disabled");
+      darkLink?.setAttribute("disabled", "");
+    } else {
+      darkLink?.removeAttribute("disabled");
+      lightLink?.setAttribute("disabled", "");
     }
   };
 
