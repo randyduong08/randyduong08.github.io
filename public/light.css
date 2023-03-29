@@ -10,3 +10,7 @@ body {
   background-color: #e0dddd;
   color: #666666;
 }
+
+html[data-theme="light"] .project-modal .modal-text {
+  color: #333; /* default light mode text color */
+}
