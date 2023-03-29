@@ -22,10 +22,14 @@ const ProjectCard: React.FC<CardProps> = ({ title, description, imgSrc, githubLi
                 <Card.Img variant="top" src={imgSrc} />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
+                    <div className="d-flex justify-content-between align-items-center">
                     <Card.Text>{description}</Card.Text>
-                    <Button variant="primary" href={githubLink} target="_blank">
-                        View Github
-                    </Button>
+                    <span className="text-right">
+                        <Button variant="primary" href={githubLink} target="_blank">
+                            View Github
+                        </Button>
+                    </span>
+                    </div>
                 </Card.Body>
             </StyledCard>
             <ProjectModal show={show} handleClose={handleClose} />
@@ -34,7 +38,69 @@ const ProjectCard: React.FC<CardProps> = ({ title, description, imgSrc, githubLi
 };
 
 const StyledCard = styled(Card)`
-    cursor: pointer;
+  cursor: pointer;
+
+  @media (min-width: 480px) {
+    width: 100%;
+    max-width: 480px;
+  }
+
+  @media (min-width: 576px) {
+    width: 100%;
+    max-width: 540px;
+  }
+  
+  @media (min-width: 768px) {
+    width: 100%;
+    max-width: 720px;
+  }
+  
+  @media (min-width: 992px) {
+    width: 100%;
+    max-width: 960px;
+  }
+  
+  @media (min-width: 1200px) {
+    width: 100%;
+    max-width: 1140px;
+  }
+  width: 67rem;
+  margin-right: 2rem;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-bottom: 2rem;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card-img-top {
+    height: 15rem;
+    object-fit: cover;
+  }
+
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .card-text {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .btn-primary {
+    font-size: 1rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 2rem;
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .btn-primary:hover {
+    background-color: #0069d9;
+    border-color: #0062cc;
+  }
 `;
 
 export default ProjectCard;
