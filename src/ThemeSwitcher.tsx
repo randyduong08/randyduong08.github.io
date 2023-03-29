@@ -18,15 +18,19 @@ const ThemeSwitcher: React.FC = () => {
     const lightLink = document.querySelector('link[title="light"]');
     // find dark.css: <link rel="stylesheet" href="./dark.css" title="dark" disabled />
     const darkLink = document.querySelector('link[title="dark"]');
+    // find index.html from public folder
+    const html = document.querySelector('html');
 
     // if true, then enable lightLink and disable darkLink
     // vice versa if false
     if (theme === "light"){
       lightLink?.removeAttribute("disabled");
       darkLink?.setAttribute("disabled", "");
+      html?.setAttribute('data-theme', 'light');
     } else {
       darkLink?.removeAttribute("disabled");
       lightLink?.setAttribute("disabled", "");
+      html?.setAttribute('data-theme', 'dark');
     }
   }, [theme]);
 
