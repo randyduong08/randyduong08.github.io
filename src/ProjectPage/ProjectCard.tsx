@@ -10,6 +10,10 @@ interface CardProps {
     githubLink: string;
 }
 
+const handleGitHubClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
+}
+
 const ProjectCard: React.FC<CardProps> = ({ title, description, imgSrc, githubLink }) => {
     const [show, setShow] = useState(false);
     
@@ -25,7 +29,7 @@ const ProjectCard: React.FC<CardProps> = ({ title, description, imgSrc, githubLi
                     <div className="d-flex justify-content-between align-items-center">
                     <Card.Text>{description}</Card.Text>
                     <span className="text-right">
-                        <Button variant="primary" href={githubLink} target="_blank">
+                        <Button variant="primary" href={githubLink} target="_blank" onClick={handleGitHubClick}>
                             View Github
                         </Button>
                     </span>
