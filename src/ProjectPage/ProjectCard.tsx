@@ -8,13 +8,16 @@ interface CardProps {
     title: string;
     description: string;
     githubLink: string;
+    modalTitle: string;
+    modalDesc: string;
 }
 
 const handleGitHubClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     event.stopPropagation();
 }
 
-const ProjectCard: React.FC<CardProps> = ({ title, description, imgSrc, githubLink }) => {
+const ProjectCard: React.FC<CardProps> = 
+({ title, description, imgSrc, githubLink, modalTitle, modalDesc }) => {
     const [show, setShow] = useState(false);
     
     const handleClose = () => setShow(false);
@@ -36,7 +39,8 @@ const ProjectCard: React.FC<CardProps> = ({ title, description, imgSrc, githubLi
                     </div>
                 </Card.Body>
             </StyledCard>
-            <ProjectModal show={show} handleClose={handleClose} />
+            <ProjectModal show={show} handleClose={handleClose} title={modalTitle} 
+              description={modalDesc} />
         </>
     );
 };

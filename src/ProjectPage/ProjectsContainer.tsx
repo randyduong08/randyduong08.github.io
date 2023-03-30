@@ -22,18 +22,24 @@ const ProjectsContainer = () => {
                     description="Sample text explaining the purpose of this project"
                     imgSrc={pimg}
                     githubLink="https://github.com/randyduong08"
+                    modalTitle="First Project"
+                    modalDesc="First proj desc"
                 />
                 <ProjectCard
                     title="Project 2"
                     description="Sample text explaining the purpose of this project"
                     imgSrc={pimg}
                     githubLink="https://github.com/randyduong08"
+                    modalTitle="Second Project"
+                    modalDesc="Second proj desc"
                 />
                 <ProjectCard
                     title="Project 3"
                     description="Sample text explaining the purpose of this project"
                     imgSrc={pimg}
                     githubLink="https://github.com/randyduong08"
+                    modalTitle="Third Project"
+                    modalDesc="Third proj desc"
                 />
                 {/*test new card above*/}
                 </div>
@@ -47,24 +53,3 @@ const ProjectsContainer = () => {
 
 
 export default ProjectsContainer;
-
-<div className="card-deck">
-  <ProjectCard
-    title="Project 1"
-    description="Sample text explaining the purpose of this project"
-    imgSrc={pimg}
-    githubLink="https://github.com/randyduong08"
-  />
-  <ProjectCard
-    title="Project 2"
-    description="Sample text explaining the purpose of this project"
-    imgSrc={pimg}
-    githubLink="https://github.com/randyduong08"
-  />
-  <ProjectCard
-    title="Project 3"
-    description="Sample text explaining the purpose of this project"
-    imgSrc={pimg}
-    githubLink="https://github.com/randyduong08"
-  />
-</div>
