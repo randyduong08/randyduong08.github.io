@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from "react";
+import { ThemeContext } from "./ThemeContext";
 
 // Define new type 'Theme' is one of two string literals - 'light' or 'dark'
 type Theme = "light" | "dark";
@@ -66,11 +67,20 @@ const ThemeSwitcher: React.FC = () => {
 
   // return a button that runs toggleTheme() on click
   // also changes name between 'Dark Mode' and 'Light Mode'
-  return (
+  /*return (
     <button onClick={toggleTheme}>
       {theme === "light" ? "Dark Mode" : "Light Mode"}
     </button>
+  );*/
+
+  return (
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <button onClick={toggleTheme}>
+        {theme === "light" ? "Dark Mode" : "Light Mode"}
+      </button>
+    </ThemeContext.Provider>
   );
+
 };
 
 export default ThemeSwitcher;
