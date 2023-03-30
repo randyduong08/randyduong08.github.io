@@ -1,2 +1,2 @@
 # randyduong08.github.io
-Website Portfolio
+Website Portfolio, made with React and TypeScript
