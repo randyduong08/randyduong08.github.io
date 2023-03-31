@@ -42,7 +42,12 @@ function Footer(){
               </a>
             </p>
             <p className="footer-text">
-              <a href={resumePDF} target="_blank" rel="noreferrer" className="text-decoration-none">
+              <a 
+                href={resumePDF} 
+                target="_blank" 
+                rel="noreferrer" 
+                className="text-decoration-none"
+              >
                 Resume
               </a>
             </p>

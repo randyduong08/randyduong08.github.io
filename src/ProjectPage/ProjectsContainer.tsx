@@ -18,28 +18,33 @@ const ProjectsContainer = () => {
                 {/*Project cards go here, in the middle main column*/}
                 {/*test new card*/}
                 <ProjectCard
-                    title="Project 1"
-                    description="Sample text explaining the purpose of this project"
+                    title="Twitch AI Outcome Predictor"
+                    description="Predict the outcome of MK games on Twitch streams"
                     imgSrc={pimg}
                     githubLink="https://github.com/randyduong08"
-                    modalTitle="First Project"
-                    modalDesc="First proj desc"
+                    modalTitle="Outcome Predictor"
+                    modalDesc="Python program that uses regressional model to predict 
+                                the outcome of Mario Kart games on Twitch streams.
+                                Uses OpenCV and pytesseract, for Computer Vision and
+                                OCR respectively."
                 />
                 <ProjectCard
-                    title="Project 2"
-                    description="Sample text explaining the purpose of this project"
+                    title="Real-Time Occupancy Monitoring System"
+                    description="Monitors and actively updates the status of people/pets"
                     imgSrc={pimg}
                     githubLink="https://github.com/randyduong08"
-                    modalTitle="Second Project"
-                    modalDesc="Second proj desc"
+                    modalTitle="Monitoring System"
+                    modalDesc="Python Program that monitors the number of people inside/outside the house.
+                                Using regression models to predict the activities of people when they go out.
+                                Uses YOLO to detect familiar people in/out the household."
                 />
                 <ProjectCard
-                    title="Project 3"
-                    description="Sample text explaining the purpose of this project"
+                    title="Unity Game Project"
+                    description="Multiplayer game in Unity"
                     imgSrc={pimg}
                     githubLink="https://github.com/randyduong08"
-                    modalTitle="Third Project"
-                    modalDesc="Third proj desc"
+                    modalTitle="Unity Game"
+                    modalDesc="Developed a game in Unity, that has network capabilities for multiplayer with sever-client or peer-to-peer connection."
                 />
                 {/*test new card above*/}
                 </div>
