@@ -1,4 +1,5 @@
 import React from "react";
+import resumePDF from "../externalfiles/Resume.pdf";
 //Footer component
 
 
@@ -41,10 +42,11 @@ function Footer(){
               </a>
             </p>
             <p className="footer-text">
-              <a
-                href="externalfiles/Resume.pdf"
+              <a 
+                href={resumePDF} 
+                target="_blank" 
+                rel="noreferrer" 
                 className="text-decoration-none"
-                target="_blank"
               >
                 Resume
               </a>

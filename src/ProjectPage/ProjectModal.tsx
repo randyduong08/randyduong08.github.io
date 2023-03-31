@@ -6,9 +6,11 @@ import { ThemeContext } from "src/ThemeContext";
 interface ProjectModalProps{
     show: boolean;
     handleClose: () => void;
+    title: string;
+    description: string;
 }
 
-const ProjectModal = ({ show, handleClose }: ProjectModalProps) => {
+const ProjectModal = ({ show, handleClose, title, description }: ProjectModalProps) => {
   const { theme } = useContext(ThemeContext);
 
   return (
@@ -18,8 +20,8 @@ const ProjectModal = ({ show, handleClose }: ProjectModalProps) => {
       </Modal.Header>
       <Modal.Body className="modal-box">
         <StyledText theme={theme} className="modal-text">
-          <h5>Project Title</h5>
-          <p>Sample text explaining the purpose of this project</p>
+          <h5>{title}</h5>
+          <p>{description}</p>
         </StyledText>
       </Modal.Body>
       <Modal.Footer className="modal-box">
