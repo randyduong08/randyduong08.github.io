@@ -34,13 +34,13 @@ const CardTitle = styled.h2`
     font-size: 1.5rem;
     font-weight: bold;
     text-align: center;
-`
+`;
 
 const CardImage = styled.img`
     width: 100%;
     height: auto;
     object-fit: cover;
-`
+`;
 
 export default ContactCard;
 
