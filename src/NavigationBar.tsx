@@ -23,7 +23,7 @@ function NavigationBar() {
             </div>
             <div className="col">
             <a href="https://www.google.com" className="text-decoration-none">
-                Education
+                Contact/Externals
             </a>
             </div>
             <div className="col">
