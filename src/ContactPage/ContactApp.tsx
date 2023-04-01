@@ -2,11 +2,12 @@
 import React from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../scripts,styles/index.css';
+import ContactsContainer from "./ContactsContainer";
 
 function ContactApp(){
     return(
         <div>
-            Test
+            <ContactsContainer/>
         </div>
     );
 }
