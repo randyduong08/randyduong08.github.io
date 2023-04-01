@@ -22,9 +22,9 @@ function NavigationBar() {
             </Link>
             </div>
             <div className="col">
-            <a href="https://www.google.com" className="text-decoration-none">
-                Contact/Externals
-            </a>
+                <Link to ="/Contacts" className="text-decoration-none">
+                    Contact/Externals
+                </Link>
             </div>
             <div className="col">
                 <Link to ="/Projects" className="text-decoration-none">
