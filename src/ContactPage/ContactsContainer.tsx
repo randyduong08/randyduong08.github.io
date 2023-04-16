@@ -35,16 +35,18 @@ const ContactsContainer: React.FC<ContactsContainerProps> = () => {
 
 
     return(
-        <StyledContactsContainer>
-            {contacts.map((contact, index) => (
-                <ContactCard
-                    key={index}
-                    title={contact.title}
-                    imageSrc={contact.imageSrc}
-                    link={contact.link} 
-                />
-            ))}
-        </StyledContactsContainer>
+        <ParentContainer>
+            <StyledContactsContainer>
+                {contacts.map((contact, index) => (
+                    <ContactCard
+                        key={index}
+                        title={contact.title}
+                        imageSrc={contact.imageSrc}
+                        link={contact.link} 
+                    />
+                ))}
+            </StyledContactsContainer>
+        </ParentContainer>
     );
 };
 
@@ -62,5 +64,14 @@ const StyledContactsContainer = styled.div`
         grid-template-columns: 1fr;
     }
 `;
+
+// Parent Container used to center the first row of contact cards to the middle of the screen
+// If more than 4 contact cards, can probably remove this styling (also means to remove the <ParentContainer> div on line 38 and 49)
+const ParentContainer = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+`
 
 export default ContactsContainer;
