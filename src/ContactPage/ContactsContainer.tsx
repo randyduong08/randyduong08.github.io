@@ -4,6 +4,7 @@ import ContactCard from './ContactCard';
 import linkedinimg from '../Images/linkedInIcon.png';
 import resumeimg from '../Images/resumeIcon.png';
 import emailimg from '../Images/emailIcon.png';
+import resumePDF from '../externalfiles/Resume.pdf';
 
 interface ContactsContainerProps {}
 
@@ -11,13 +12,18 @@ const ContactsContainer: React.FC<ContactsContainerProps> = () => {
     const contacts = [
         {
             title: "Email",
-            imageSrc: "../Images/emailIcon.png",
+            imageSrc: emailimg,
             link: "mailto:randyduong08@gmail.com"
         },
         {
             title: "LinkedIn",
-            imageSrc: "../Images/linkedInIcon.png",
+            imageSrc: linkedinimg,
             link: "https://www.linkedin.com"
+        },
+        {
+            title: "Resume",
+            imageSrc: resumeimg,
+            link: resumePDF
         }
     ]
 
