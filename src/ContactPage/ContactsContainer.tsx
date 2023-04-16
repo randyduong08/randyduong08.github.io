@@ -13,6 +13,11 @@ const ContactsContainer: React.FC<ContactsContainerProps> = () => {
             title: "Email",
             imageSrc: "../Images/emailIcon.png",
             link: "mailto:randyduong08@gmail.com"
+        },
+        {
+            title: "LinkedIn",
+            imageSrc: "../Images/linkedInIcon.png",
+            link: "https://www.linkedin.com"
         }
     ]
 
