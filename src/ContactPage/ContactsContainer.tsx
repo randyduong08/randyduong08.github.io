@@ -5,6 +5,7 @@ import linkedinimg from '../Images/linkedInIcon.png';
 import resumeimg from '../Images/resumeIcon.png';
 import emailimg from '../Images/emailIcon.png';
 import resumePDF from '../externalfiles/Resume.pdf';
+import githubimg from '../Images/gitHubIcon.png';
 
 interface ContactsContainerProps {}
 
@@ -24,6 +25,11 @@ const ContactsContainer: React.FC<ContactsContainerProps> = () => {
             title: "Resume",
             imageSrc: resumeimg,
             link: resumePDF
+        },
+        {
+            title: "GitHub",
+            imageSrc: githubimg,
+            link: "https://github.com/randyduong08"
         }
     ]
 
@@ -48,7 +54,7 @@ const StyledContactsContainer = styled.div`
     grid-gap: 1rem;
     padding: 1rem;
 
-    @media (max-widdth: 768px) {
+    @media (max-width: 768px) {
         grid-template-columns: repeat(2, 1fr);
     }
 
