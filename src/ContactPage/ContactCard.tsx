@@ -13,12 +13,20 @@ const ContactCard: React.FC<ContactCardProps> = ({ title, imageSrc, link}) => {
     };
 
     return (
-        <StyledCard onClick={handleCardClick}>
-            <CardTitle>{title}</CardTitle>
-            <CardImage src={imageSrc} alt={title} />
-        </StyledCard>
+        <CardContainer onClick={handleCardClick}>
+            <StyledCard>
+                <CardTitle>{title}</CardTitle>
+                <CardImage src={imageSrc} alt={title} />
+            </StyledCard>
+        </CardContainer>
     );
 };
+
+const CardContainer = styled.div`
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+`;
 
 const StyledCard = styled.div`
     display: flex;
