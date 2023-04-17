@@ -5,9 +5,10 @@ interface ContactCardProps {
     title: string;
     imageSrc: string;
     link: string;
+    index: number;
 }
 
-const ContactCard: React.FC<ContactCardProps> = ({ title, imageSrc, link}) => {
+const ContactCard: React.FC<ContactCardProps> = ({ title, imageSrc, link, index}) => {
     const handleCardClick = () => {
         window.open(link, '_blank');
     };
@@ -16,9 +17,12 @@ const ContactCard: React.FC<ContactCardProps> = ({ title, imageSrc, link}) => {
 
     useEffect(() => {
         if (cardRef.current){
-            setAnimated(true);
+            setTimeout(() => {
+                setAnimated(true);
+            }, 100* index // add a delay of 100ms  multiplied by the index of curr card
+            );
         }
-    }, []
+    }, [index]
     );
 
     return (
@@ -48,6 +52,10 @@ const StyledCard = styled.div`
 
     &.animated  {
         animation: slide-up 0.5s ease, fase-in 0.5s ease forwards;
+    }
+
+    &.animated:last-of-type {
+        animation-duration: 0.7s;
     }
 
     @keyframes slide-up {
