@@ -47,16 +47,23 @@ const StyledCard = styled.div`
     cursor: pointer;
 
     &.animated  {
-        animation: slide-up 0.5s ease;
+        animation: slide-up 0.5s ease, fase-in 0.5s ease forwards;
     }
 
     @keyframes slide-up {
         from {
             transform: translateY(50%);
-            opacity: 0;
         }
         to {
             transform: translateY(0%);
+        }
+    }
+
+    @keyframes fade-in {
+        from {
+            opacity: 0;
+        }
+        to {
             opacity: 1;
         }
     }
