@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
 
 interface ContactCardProps {
@@ -11,10 +11,19 @@ const ContactCard: React.FC<ContactCardProps> = ({ title, imageSrc, link}) => {
     const handleCardClick = () => {
         window.open(link, '_blank');
     };
+    const cardRef = useRef<HTMLDivElement>(null);
+    const [animated, setAnimated] = useState(false);
+
+    useEffect(() => {
+        if (cardRef.current){
+            setAnimated(true);
+        }
+    }, []
+    );
 
     return (
         <CardContainer onClick={handleCardClick}>
-            <StyledCard>
+            <StyledCard ref={cardRef} className={animated ? 'animated' : ''}>
                 <CardTitle>{title}</CardTitle>
                 <CardImage src={imageSrc} alt={title} />
             </StyledCard>
@@ -36,6 +45,21 @@ const StyledCard = styled.div`
     width: 100%;
     height: 100%;
     cursor: pointer;
+
+    &.animated  {
+        animation: slide-up 0.5s ease;
+    }
+
+    @keyframes slide-up {
+        from {
+            transform: translateY(50%);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0%);
+            opacity: 1;
+        }
+    }
 `;
 
 const CardTitle = styled.h2`
