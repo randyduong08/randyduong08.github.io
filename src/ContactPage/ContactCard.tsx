@@ -35,6 +35,13 @@ const ContactCard: React.FC<ContactCardProps> = ({ title, imageSrc, link, index}
     );
 };
 
+let cardPos = '150%';
+
+function AdjustCardPos(pos: number){
+    cardPos = pos.toString()+"%";
+    return cardPos;
+}
+
 const CardContainer = styled.div`
     border: 1px solid black;
     border-radius: 10px;
@@ -51,19 +58,20 @@ const StyledCard = styled.div`
     cursor: pointer;
 
     &.animated  {
-        animation: slide-up 0.5s ease, fase-in 0.5s ease forwards;
+        animation: slide-up 0.5s ease, fade-in 0.5s ease forwards;
     }
 
     &.animated:last-of-type {
         animation-duration: 0.7s;
     }
 
+
     @keyframes slide-up {
         from {
-            transform: translateY(150%);
+            transform: translateY(${AdjustCardPos(150)});
         }
         to {
-            transform: translateY(0%);
+            transform: translateY(${AdjustCardPos(0)});
         }
     }
 
