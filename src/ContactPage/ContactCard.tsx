@@ -60,7 +60,7 @@ const StyledCard = styled.div`
 
     @keyframes slide-up {
         from {
-            transform: translateY(50%);
+            transform: translateY(150%);
         }
         to {
             transform: translateY(0%);
