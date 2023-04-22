@@ -56,9 +56,12 @@ const StyledCard = styled.div`
     width: 100%;
     height: 100%;
     cursor: pointer;
+    opacity: 0; //initial opacity to 0
+    transform: translateY(150%); //initial translation to 150% (out of the screen)
 
     &.animated  {
-        animation: slide-up 0.5s ease, fade-in 0.5s ease forwards;
+        animation: slide-up 0.5s ease forwards, fade-in 0.5s ease forwards;
+        // 'forwards' to slide-up animation fixes issue with line 60 running after animation, i.e., cards going out of screen after animation
     }
 
     &.animated:last-of-type {
