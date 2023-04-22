@@ -40,6 +40,7 @@ const ContactsContainer: React.FC<ContactsContainerProps> = () => {
                 {contacts.map((contact, index) => (
                     <ContactCard
                         key={index}
+                        index={index}
                         title={contact.title}
                         imageSrc={contact.imageSrc}
                         link={contact.link} 
