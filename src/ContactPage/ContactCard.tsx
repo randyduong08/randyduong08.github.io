@@ -26,12 +26,10 @@ const ContactCard: React.FC<ContactCardProps> = ({ title, imageSrc, link, index}
     );
 
     return (
-        <CardContainer onClick={handleCardClick}>
-            <StyledCard ref={cardRef} className={animated ? 'animated' : ''}>
-                <CardTitle>{title}</CardTitle>
-                <CardImage src={imageSrc} alt={title} />
-            </StyledCard>
-        </CardContainer>
+        <StyledCard onClick={handleCardClick} ref={cardRef} className={animated ? 'animated' : ''}>
+            <CardTitle>{title}</CardTitle>
+            <CardImage src={imageSrc} alt={title} />
+        </StyledCard>
     );
 };
 
@@ -42,13 +40,11 @@ function AdjustCardPos(pos: number){
     return cardPos;
 }
 
-const CardContainer = styled.div`
+
+const StyledCard = styled.div`
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
-`;
-
-const StyledCard = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -58,6 +54,22 @@ const StyledCard = styled.div`
     cursor: pointer;
     opacity: 0; //initial opacity to 0
     transform: translateY(150%); //initial translation to 150% (out of the screen)
+
+    &:hover img {
+        transform: scale(1.1);
+      }
+    
+      &:hover h2 {
+        color: #007bff;
+      }
+    
+      &:hover div {
+        background-color: #007bff;
+      }
+    
+      &:hover a {
+        color: white;
+      }
 
     &.animated  {
         animation: slide-up 0.5s ease forwards, fade-in 0.5s ease forwards;
