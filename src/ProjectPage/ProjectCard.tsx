@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import styled from "styled-components";
 import { Card, Button } from "react-bootstrap";
 import ProjectModal from "./ProjectModal";
@@ -22,31 +22,47 @@ const ProjectCard: React.FC<CardProps> =
     const [show, setShow] = useState(false);
     const [loaded, setLoaded] = useState(false);
 
-    // set loaded state after component has mounted
-    useEffect(() => {
+    const onAnimationEnd = () => {
       setLoaded(true);
-    }, []);
+    }
     
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     return(
-        <>
-            <StyledCard onClick={handleShow} loaded={loaded} index={index}>
-                <Card.Img variant="top" src={imgSrc} />
-                <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    <div className="d-flex justify-content-between align-items-center">
-                    <Card.Text>{description}</Card.Text>
-                    <span className="text-right">
-                        <Button variant="primary" href={githubLink} target="_blank" onClick={handleGitHubClick}>
-                            View Github
-                        </Button>
-                    </span>
-                    </div>
-                </Card.Body>
-            </StyledCard>
-            <ProjectModal show={show} handleClose={handleClose} title={modalTitle} 
+        <> 
+        {!loaded ? (
+          <SlidingCard onClick={handleShow} index={index} onAnimationEndCapture={onAnimationEnd}>
+            <Card.Img variant="top" src={imgSrc} />
+              <Card.Body>
+                  <Card.Title>{title}</Card.Title>
+                  <div className="d-flex justify-content-between align-items-center">
+                  <Card.Text>{description}</Card.Text>
+                  <span className="text-right">
+                      <Button variant="primary" href={githubLink} target="_blank" onClick={handleGitHubClick}>
+                          View Github
+                      </Button>
+                  </span>
+                  </div>
+              </Card.Body>
+          </SlidingCard>
+        ) : (
+          <StyledCard onClick={handleShow} index={index}>
+            <Card.Img variant="top" src={imgSrc} />
+            <Card.Body>
+                <Card.Title>{title}</Card.Title>
+                <div className="d-flex justify-content-between align-items-center">
+                <Card.Text>{description}</Card.Text>
+                <span className="text-right">
+                    <Button variant="primary" href={githubLink} target="_blank" onClick={handleGitHubClick}>
+                        View Github
+                    </Button>
+                </span>
+                </div>
+            </Card.Body>
+          </StyledCard>
+        )}
+                    <ProjectModal show={show} handleClose={handleClose} title={modalTitle} 
               description={modalDesc} />
         </>
     );
@@ -54,8 +70,6 @@ const ProjectCard: React.FC<CardProps> =
 
 const StyledCard = styled(Card)`
   cursor: pointer;
-  transform: ${({ loaded }) => (loaded ? 'translateX(0)' : 'translateX(-150%)')};
-  transition: ${({ index }) => `transform 0.5s ease-in-out ${index * 0.5}s`}; // Add the delay based on the index
 
   &:hover {
     transform: scale(1.05) translateX(0);
@@ -126,5 +140,52 @@ const StyledCard = styled(Card)`
     border-color: #0062cc;
   }
 `;
+
+const SlidingCard = styled(StyledCard)`
+  transform: translateX(-150%);
+  transition: ${({ index }) => `transform 0.5s ease-in-out ${index * 0.5}s`}; // Add the delay based on the index
+
+  ${({ index }) => `
+    animation: slideIn 0.5s ease-in-out ${index * 0.5}s forwards;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-play-state: running;
+    animation-delay: ${index * 0.5}s;
+    @keyframes slideIn {
+      0% {
+        transform: translateX(-150%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+    animation-direction: normal;
+    animation-timing-function: ease-in-out;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-name: slideIn;
+    animation-play-state: running;
+    animation-delay: ${index * 0.5}s;
+  `}
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  &:hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  &:not(:hover) {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &::after {
+    display: none;
+    content: '';
+  }
+`;
+
 
 export default ProjectCard;
