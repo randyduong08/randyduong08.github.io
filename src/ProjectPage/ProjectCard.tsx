@@ -59,7 +59,14 @@ const StyledCard = styled(Card)`
 
   &:hover {
     transform: scale(1.05) translateX(0);
-    transition: all 0.3s ease-in-out;
+  }
+
+  &:hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+
+  &:not(:hover) {
+    transition: transform 0.3s ease-in-out;
   }
 
   @media (min-width: 480px) {
