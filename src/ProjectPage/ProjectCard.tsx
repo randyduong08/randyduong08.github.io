@@ -10,6 +10,7 @@ interface CardProps {
     githubLink: string;
     modalTitle: string;
     modalDesc: string;
+    index: number;
 }
 
 const handleGitHubClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -17,7 +18,7 @@ const handleGitHubClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 }
 
 const ProjectCard: React.FC<CardProps> = 
-({ title, description, imgSrc, githubLink, modalTitle, modalDesc }) => {
+({ title, description, imgSrc, githubLink, modalTitle, modalDesc, index }) => {
     const [show, setShow] = useState(false);
     
     const handleClose = () => setShow(false);
@@ -25,7 +26,7 @@ const ProjectCard: React.FC<CardProps> =
 
     return(
         <>
-            <StyledCard onClick={handleShow}>
+            <StyledCard index={index} onClick={handleShow}>
                 <Card.Img variant="top" src={imgSrc} />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
@@ -45,7 +46,7 @@ const ProjectCard: React.FC<CardProps> =
     );
 };
 
-const StyledCard = styled(Card)`
+const StyledCard = styled(Card)<{ index: number}>`
   cursor: pointer;
 
   @media (min-width: 480px) {
@@ -109,6 +110,24 @@ const StyledCard = styled(Card)`
     background-color: #0069d9;
     border-color: #0062cc;
   }
+  
+  // Move cards out of screen to left
+  transform: translateX(-150%);
+
+  //Slide-in animation w/ delay based on card index
+  animation: slide-in 0.5s ease forwards;
+  animation-delay: ${({index}) => index * 0.1}s;
+
+  @keyframes slide-in {
+    from {
+      transform: translateX(-150%); 
+    }
+    to {
+      transform: translateX(0%);
+    }
+  }
+
+
 `;
 
 export default ProjectCard;

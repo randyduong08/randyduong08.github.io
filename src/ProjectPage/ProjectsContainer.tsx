@@ -27,6 +27,7 @@ const ProjectsContainer = () => {
                                 the outcome of Mario Kart games on Twitch streams.
                                 Uses OpenCV and pytesseract, for Computer Vision and
                                 OCR respectively."
+                    index = {0}
                 />
                 <ProjectCard
                     title="Real-Time Occupancy Monitoring System"
@@ -37,6 +38,7 @@ const ProjectsContainer = () => {
                     modalDesc="Python Program that monitors the number of people inside/outside the house.
                                 Using regression models to predict the activities of people when they go out.
                                 Uses YOLO to detect familiar people in/out the household."
+                    index = {1}
                 />
                 <ProjectCard
                     title="Unity Game Project"
@@ -45,6 +47,7 @@ const ProjectsContainer = () => {
                     githubLink="https://github.com/randyduong08"
                     modalTitle="Unity Game"
                     modalDesc="Developed a game in Unity, that has network capabilities for multiplayer with sever-client or peer-to-peer connection."
+                    index = {2}
                 />
                 {/*test new card above*/}
                 </div>
