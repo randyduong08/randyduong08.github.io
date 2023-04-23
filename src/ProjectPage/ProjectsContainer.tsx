@@ -1,12 +1,14 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import pimg from '../Images/nightsky.jpg';
+import mkimg from '../Images/mk8.jpg';
+import petimg from '../Images/pet.jpg';
+import uimg from '../Images/Unity.png';
 
 const projectData = [
     {
         title:"Twitch AI Outcome Predictor",
         description:"Predict the outcome of MK games on Twitch streams",
-        imgSrc:pimg,
+        imgSrc:mkimg,
         githubLink:"https://github.com/randyduong08",
         modalTitle:"Outcome Predictor",
         modalDesc:"Python program that uses regressional model to predict the outcome of Mario Kart games on Twitch streams. Uses OpenCV and pytesseract, for Computer Vision and OCR respectively."
@@ -14,7 +16,7 @@ const projectData = [
     {
         title:"Real-Time Occupancy Monitoring System",
         description:"Monitors and actively updates the status of people/pets",
-        imgSrc:pimg,
+        imgSrc:petimg,
         githubLink:"https://github.com/randyduong08",
         modalTitle:"Monitoring System",
         modalDesc:"Python Program that monitors the number of people inside/outside the house. Using regression models to predict the activities of people when they go out. Uses YOLO to detect familiar people in/out the household."
@@ -22,7 +24,7 @@ const projectData = [
     {
         title:"Unity Game Project",
         description:"Multiplayer game in Unity",
-        imgSrc:pimg,
+        imgSrc:uimg,
         githubLink:"https://github.com/randyduong08",
         modalTitle:"Unity Game",
         modalDesc:"Developed a game in Unity, that has network capabilities for multiplayer with sever-client or peer-to-peer connection."
