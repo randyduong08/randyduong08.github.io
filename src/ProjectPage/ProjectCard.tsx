@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Card, Button } from "react-bootstrap";
 import ProjectModal from "./ProjectModal";
@@ -18,15 +18,21 @@ const handleGitHubClick = (event: React.MouseEvent<HTMLButtonElement>) => {
 }
 
 const ProjectCard: React.FC<CardProps> = 
-({ title, description, imgSrc, githubLink, modalTitle, modalDesc, index }) => {
+({ title, description, imgSrc, githubLink, modalTitle, modalDesc, index}) => {
     const [show, setShow] = useState(false);
+    const [loaded, setLoaded] = useState(false);
+
+    // set loaded state after component has mounted
+    useEffect(() => {
+      setLoaded(true);
+    }, []);
     
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
     return(
         <>
-            <StyledCard index={index} onClick={handleShow}>
+            <StyledCard onClick={handleShow} loaded={loaded} index={index}>
                 <Card.Img variant="top" src={imgSrc} />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
@@ -46,8 +52,15 @@ const ProjectCard: React.FC<CardProps> =
     );
 };
 
-const StyledCard = styled(Card)<{ index: number}>`
+const StyledCard = styled(Card)`
   cursor: pointer;
+  transform: ${({ loaded }) => (loaded ? 'translateX(0)' : 'translateX(-150%)')};
+  transition: ${({ index }) => `transform 0.5s ease-in-out ${index * 0.5}s`}; // Add the delay based on the index
+
+  &:hover {
+    transform: scale(1.05) translateX(0);
+    transition: all 0.3s ease-in-out;
+  }
 
   @media (min-width: 480px) {
     width: 100%;
@@ -78,11 +91,6 @@ const StyledCard = styled(Card)<{ index: number}>`
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
   margin-bottom: 2rem;
 
-  &:hover {
-    transform: scale(1.05);
-    transition: all 0.3s ease-in-out;
-  }
-
   .card-img-top {
     height: 15rem;
     object-fit: cover;
@@ -110,24 +118,6 @@ const StyledCard = styled(Card)<{ index: number}>`
     background-color: #0069d9;
     border-color: #0062cc;
   }
-  
-  // Move cards out of screen to left
-  transform: translateX(-150%);
-
-  //Slide-in animation w/ delay based on card index
-  animation: slide-in 1s ease forwards;
-  animation-delay: ${({index}) => index * 0.5}s;
-
-  @keyframes slide-in {
-    from {
-      transform: translateX(-150%); 
-    }
-    to {
-      transform: translateX(0%);
-    }
-  }
-
-
 `;
 
 export default ProjectCard;
