@@ -115,8 +115,8 @@ const StyledCard = styled(Card)<{ index: number}>`
   transform: translateX(-150%);
 
   //Slide-in animation w/ delay based on card index
-  animation: slide-in 0.5s ease forwards;
-  animation-delay: ${({index}) => index * 0.1}s;
+  animation: slide-in 1s ease forwards;
+  animation-delay: ${({index}) => index * 0.5}s;
 
   @keyframes slide-in {
     from {
