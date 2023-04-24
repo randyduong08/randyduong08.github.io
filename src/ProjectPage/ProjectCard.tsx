@@ -166,7 +166,7 @@ const SlidingCard = styled(StyledCard)`
     animation-iteration-count: 1;
     animation-name: slideIn;
     animation-play-state: running;
-    animation-delay: ${index * 0.5}s;
+    animation-delay: ${index * 0.3}s;
   `}
 
   &:hover {
