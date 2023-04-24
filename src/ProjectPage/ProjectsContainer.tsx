@@ -1,6 +1,35 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
-import pimg from '../Images/nightsky.jpg';
+import mkimg from '../Images/mk8.jpg';
+import petimg from '../Images/pet.jpg';
+import uimg from '../Images/Unity.png';
+
+const projectData = [
+    {
+        title:"Twitch AI Outcome Predictor",
+        description:"Predict the outcome of MK games on Twitch streams",
+        imgSrc:mkimg,
+        githubLink:"https://github.com/randyduong08",
+        modalTitle:"Outcome Predictor",
+        modalDesc:"Python program that uses regressional model to predict the outcome of Mario Kart games on Twitch streams. Uses OpenCV and pytesseract, for Computer Vision and OCR respectively."
+    },
+    {
+        title:"Real-Time Occupancy Monitoring System",
+        description:"Monitors and actively updates the status of people/pets",
+        imgSrc:petimg,
+        githubLink:"https://github.com/randyduong08",
+        modalTitle:"Monitoring System",
+        modalDesc:"Python Program that monitors the number of people inside/outside the house. Using regression models to predict the activities of people when they go out. Uses YOLO to detect familiar people in/out the household."
+    },
+    {
+        title:"Unity Game Project",
+        description:"Multiplayer game in Unity",
+        imgSrc:uimg,
+        githubLink:"https://github.com/randyduong08",
+        modalTitle:"Unity Game",
+        modalDesc:"Developed a game in Unity, that has network capabilities for multiplayer with sever-client or peer-to-peer connection."
+    }
+]
 
 const ProjectsContainer = () => {
     return(
@@ -15,38 +44,19 @@ const ProjectsContainer = () => {
             <div className="row">
                 <div className="col-md-1" />
                 <div className="col-md-10">
-                {/*Project cards go here, in the middle main column*/}
-                {/*test new card*/}
-                <ProjectCard
-                    title="Twitch AI Outcome Predictor"
-                    description="Predict the outcome of MK games on Twitch streams"
-                    imgSrc={pimg}
-                    githubLink="https://github.com/randyduong08"
-                    modalTitle="Outcome Predictor"
-                    modalDesc="Python program that uses regressional model to predict 
-                                the outcome of Mario Kart games on Twitch streams.
-                                Uses OpenCV and pytesseract, for Computer Vision and
-                                OCR respectively."
-                />
-                <ProjectCard
-                    title="Real-Time Occupancy Monitoring System"
-                    description="Monitors and actively updates the status of people/pets"
-                    imgSrc={pimg}
-                    githubLink="https://github.com/randyduong08"
-                    modalTitle="Monitoring System"
-                    modalDesc="Python Program that monitors the number of people inside/outside the house.
-                                Using regression models to predict the activities of people when they go out.
-                                Uses YOLO to detect familiar people in/out the household."
-                />
-                <ProjectCard
-                    title="Unity Game Project"
-                    description="Multiplayer game in Unity"
-                    imgSrc={pimg}
-                    githubLink="https://github.com/randyduong08"
-                    modalTitle="Unity Game"
-                    modalDesc="Developed a game in Unity, that has network capabilities for multiplayer with sever-client or peer-to-peer connection."
-                />
-                {/*test new card above*/}
+                {/*Mapping of project data here*/}
+                {projectData.map((project, index) => (
+                    <ProjectCard 
+                        key={index}
+                        index={index}
+                        title={project.title}
+                        description={project.description}
+                        imgSrc={project.imgSrc}
+                        githubLink={project.githubLink}
+                        modalTitle={project.modalTitle}
+                        modalDesc={project.modalDesc}
+                    />
+                ))}
                 </div>
                 <div className="col-md-1" />
             </div>
