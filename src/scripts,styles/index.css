@@ -11,6 +11,8 @@ footer{
   margin: 2px 0;
 }
 
+/* edits the top paddding onn the jumbotron
+  decrease px size to move jumbotron text closer to navbar */
 main{
   padding-top: 200px;
 }

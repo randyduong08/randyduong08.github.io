@@ -30,9 +30,9 @@ function Jumbotron() {
       <div className="container text-center">
         <h1>Randy Duong</h1>
         <div className="intro-text">
-          <p>3rd year back-end software developer</p>
-          <p>sample text</p>
-          <p>sample text</p>
+          <p>Third year student at the University of Windsor studying Computer Science, with a specialization in Software Engineering.</p>
+          <p>I am passionate about programming, with a particular interest in Machine Learning and Game Development.</p>
+          <p>I also love working with front-end related concepts, specifically using React, Flask, and TypeScript to develop full-scale web applications.</p>
         </div>
         <Button onClick={handleButtonClick} text="Check out my work" />
       </div>
