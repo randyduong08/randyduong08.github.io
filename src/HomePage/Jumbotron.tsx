@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { useNavigate } from "react-router-dom";
 //Jumbotron component
 // Uses bootstrap jumbotron class
@@ -26,19 +26,30 @@ function Jumbotron() {
   }; 
 
   return (
-    <div className="jumbotron">
+    <StyledJumbotron className="jumbotron">
       <div className="container text-center">
         <h1>Randy Duong</h1>
         <div className="intro-text">
-          <p>Third year student at the University of Windsor studying Computer Science, with a specialization in Software Engineering.</p>
+          <p>Third year student at the University of Someplace studying Computer Science, with a specialization in Software Engineering.</p>
           <p>I am passionate about programming, with a particular interest in Machine Learning and Game Development.</p>
           <p>I also love working with front-end related concepts, specifically using React, Flask, and TypeScript to develop full-scale web applications.</p>
         </div>
         <Button onClick={handleButtonClick} text="Check out my work" />
       </div>
-    </div>
+    </StyledJumbotron>
   )
 }
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`;
 
 const StyledButton = styled.button`
   position: relative;
@@ -93,6 +104,35 @@ const StyledButton = styled.button`
 
   &:hover:after {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+`;
+
+const StyledJumbotron  = styled.div`
+  & h1,
+  .intro-text p,
+  ${StyledButton} {
+    opacity: 0;
+    animation: ${fadeIn} 1s forwards;
+  }
+
+  & h1 {
+    animation-delay: 0.3s;
+  }
+
+  .intro-text p {
+    &:nth-child(1) {
+      animation-delay: 0.6s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.9s;
+    }
+    &:nth-child(3) {
+      animation-delay: 1.2s;
+    }
+  }
+
+  ${StyledButton} {
+    animation-delay: 1.5s;
   }
 `;
 
