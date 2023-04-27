@@ -14,7 +14,7 @@ footer{
 /* edits the top paddding onn the jumbotron
   decrease px size to move jumbotron text closer to navbar */
 main{
-  padding-top: 200px;
+  padding-top: 175px;
 }
 
 /* fix button to the top-right of the page -- legacy now

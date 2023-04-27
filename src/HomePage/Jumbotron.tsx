@@ -127,6 +127,7 @@ const StyledJumbotron  = styled.div`
 
   & h1 {
     animation-delay: 0.3s;
+    margin-bottom: 2.2rem; //separate h1 from rest of content below it
   }
 
   .intro-text p {
