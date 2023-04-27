@@ -40,6 +40,17 @@ function Jumbotron() {
   )
 }
 
+const fadeInSkew = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateY(20px) skewX(-15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) skewX(-15deg);
+  }
+`;
+
 const fadeIn = keyframes`
   0% {
     opacity: 0;
@@ -109,8 +120,7 @@ const StyledButton = styled.button`
 
 const StyledJumbotron  = styled.div`
   & h1,
-  .intro-text p,
-  ${StyledButton} {
+  .intro-text p {
     opacity: 0;
     animation: ${fadeIn} 1s forwards;
   }
@@ -132,6 +142,8 @@ const StyledJumbotron  = styled.div`
   }
 
   ${StyledButton} {
+    opacity: 0;
+    animation: ${fadeInSkew} 1s forwards;
     animation-delay: 1.5s;
   }
 `;
