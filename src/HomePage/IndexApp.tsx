@@ -2,13 +2,13 @@
 import MainSection from "./MainSection";
 import Footer from "./Footer";
 import React from "react";
-import Skills from "./Skills";
+import TechnicalSkills from "./TechnicalSkills";
 
 function IndexApp(){
     return(
         <div>
             <MainSection />
-            <Skills />
+            <TechnicalSkills />
             <Footer />
         </div>
     );
