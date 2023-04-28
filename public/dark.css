@@ -21,3 +21,13 @@ html[data-theme="dark"] .project-modal .modal-box{
 html[data-theme="dark"] .project-modal .modal-text {
   color: #ffffff; /* default dark mode text color */
 }
+
+/* styling for the External link in the footer of homepage */
+
+.footer-link {
+  color: #ebebeb;
+}
+
+.footer-link:hover {
+  color: #cccccc;
+}

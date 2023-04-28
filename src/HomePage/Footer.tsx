@@ -4,7 +4,6 @@ import styled, { keyframes } from "styled-components";
 import gitHubIcon from "../Images/gitHubIcon.png";
 import linkedInIcon from "../Images/LinkedInBlackIcon.png";
 import resumeIcon from "../Images/resumeAlternateIcon.png";
-import GithubButton from "src/ProjectPage/GithubButton";
 //Footer component
 
 
@@ -25,7 +24,7 @@ function Footer(){
             <p className="footer-text">
               <a
                 href="https://github.com/randyduong08"
-                className="text-decoration-none"
+                className="text-decoration-none footer-link"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -36,7 +35,7 @@ function Footer(){
             <p className="footer-text">
               <a
                 href="https://www.linkedin.com/in/rduong08"
-                className="text-decoration-none"
+                className="text-decoration-none footer-link"
                 target="_blank"
                 rel="noreferrer"
               >
@@ -49,7 +48,7 @@ function Footer(){
                 href={resumePDF} 
                 target="_blank" 
                 rel="noreferrer" 
-                className="text-decoration-none"
+                className="text-decoration-none footer-link"
               >
                 Resume
               </a>
