@@ -33,15 +33,16 @@ function TechnicalSkills(){
 export default TechnicalSkills;
 
 const SkillsSection = styled.section`
-        padding: 2rem 0;
-        margin-bottom: 2rem;
+    margin: 4rem 1rem 2rem; // Top, right and left set to 1rem, bottom set to 2rem
 `;
 
 const SkillsWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start; // Change this from center to flex-start
   gap: 1rem;
+  max-width: 90%; // Add a max-width
+  margin: 0 auto; // Center the container
 `;
 
 const SkillCard = styled.div`
@@ -59,6 +60,6 @@ const SkillCard = styled.div`
 
   img {
     max-width: 100%;
-    max-height: 150px;
+    max-height: 250px;
   }
 `;
