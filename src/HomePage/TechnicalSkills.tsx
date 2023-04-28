@@ -18,47 +18,47 @@ function TechnicalSkills(){
     return (
         //<p>Temp, insert technical skill cards here (ex: Python, C#, etc.)</p>
         <SkillsSection>
-            <div className="container">
-                <div className="row">
-                    {skills.map((skill, index) => (
-                        <div className="col-md-4 col-sm-6" key={index}>
-                            <SkillCard>
-                                <h6>{skill.title}</h6>
-                                <img src={skill.image} alt={skill.title} />
-                            </SkillCard>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </SkillsSection>
+        <SkillsWrapper>
+          {skills.map((skill, index) => (
+            <SkillCard key={index}>
+              <h6>{skill.title}</h6>
+              <img src={skill.image} alt={skill.title} />
+            </SkillCard>
+          ))}
+        </SkillsWrapper>
+      </SkillsSection>
     );
 }
 
 export default TechnicalSkills;
 
 const SkillsSection = styled.section`
-    && {
         padding: 2rem 0;
-        margin-bottom: 1rem;
-    }
+        margin-bottom: 2rem;
+`;
+
+const SkillsWrapper = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
 `;
 
 const SkillCard = styled.div`
-    background-color: white;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 1rem;
-    margin: 0 1rem 1rem 1rem;
-    text-align: center;
-    width: calc(100% - 2rem);
-    max-width: 200px;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  text-align: center;
+  width: calc(100% - 2rem);
+  max-width: 200px;
 
-    h6 {
-        margin-bottom: 1rem;
-    }
+  h6 {
+    margin-bottom: 1rem;
+  }
 
-    img {
-        max-width: 100%;
-        max-height: 150px;
-    }
+  img {
+    max-width: 100%;
+    max-height: 150px;
+  }
 `;
