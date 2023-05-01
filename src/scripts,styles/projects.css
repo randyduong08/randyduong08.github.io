@@ -1,10 +1,3 @@
-/* fix button to the top-right of the page */
-.top-right {
-    position: fixed;
-    top: 0;
-    right: 0;
-  }
-
 /* applies to any .card-img-top element nested innside "card mb-4" */
 
 .card.mb-4 > .card-img-top {
