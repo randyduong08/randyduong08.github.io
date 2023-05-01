@@ -35,6 +35,11 @@ main{
   height: 30px;
 }
 
+.Topbar-nav-links .top-right button {
+  display: inline-block;
+  margin-left: auto;
+}
+
 .main-content-container {
-  min-height: calc(100vh - 161px)
+  min-height: calc(100vh - 171px)
 }

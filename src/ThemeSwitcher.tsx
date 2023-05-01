@@ -91,14 +91,15 @@ const ThemeSwitcher: React.FC = () => {
 };
 
 const IconButton = styled.button`
-  width: 32px;
-  height: 32px;
+  width: 44px;
+  height: 44px;
   border-radius: 20%;
   background-color: transparent;
   border: none;
   cursor: pointer;
   outline: none;
   padding: 0;
+  transition-duration: 0.4s;
 
   &:hover {
     opacity: 0.8;
@@ -107,8 +108,8 @@ const IconButton = styled.button`
 `;
 
 const IconImage = styled.img`
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 `
 
 export default ThemeSwitcher;
