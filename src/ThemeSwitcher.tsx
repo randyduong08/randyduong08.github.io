@@ -1,5 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { ThemeContext } from "./ThemeContext";
+import styled from "styled-components";
+import SunIcon from "../src/Images/Sun.png";
+import MoonIcon from "../src/Images/Moon.png";
 
 // Define new type 'Theme' is one of two string literals - 'light' or 'dark'
 type Theme = "light" | "dark";
@@ -75,12 +78,37 @@ const ThemeSwitcher: React.FC = () => {
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
-      <button onClick={toggleTheme}>
-        {theme === "light" ? "Dark Mode" : "Light Mode"}
-      </button>
+      <IconButton onClick={toggleTheme}>
+        {theme === "light" ? (
+          <IconImage src={MoonIcon} alt="Moon" />
+          ) : (
+          <IconImage src={SunIcon} alt="Sun" />
+          )}
+      </IconButton>
     </ThemeContext.Provider>
   );
 
 };
+
+const IconButton = styled.button`
+  width: 32px;
+  height: 32px;
+  border-radius: 20%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  padding: 0;
+
+  &:hover {
+    opacity: 0.8;
+    background-color: rgba(45, 112, 212, 0.75);
+  }
+`;
+
+const IconImage = styled.img`
+  width: 24px;
+  height: 24px;
+`
 
 export default ThemeSwitcher;
