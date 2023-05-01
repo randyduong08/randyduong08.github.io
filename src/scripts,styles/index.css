@@ -1,5 +1,5 @@
 footer{
-    position: fixed;
+    position: relative;
     left: 0;
     bottom: 0;
     width: 100%;
@@ -33,4 +33,8 @@ main{
 /* make edits to the navigation bar */
 .Topbar-nav-container {
   height: 30px;
+}
+
+.main-content-container {
+  min-height: calc(100vh - 180px)
 }

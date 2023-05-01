@@ -7,8 +7,10 @@ import TechnicalSkills from "./TechnicalSkills";
 function IndexApp(){
     return(
         <div>
-            <MainSection />
-            <TechnicalSkills />
+            <div className="main-content-container">
+                <MainSection />
+                {/*<TechnicalSkills />*/}
+            </div>
             <Footer />
         </div>
     );
