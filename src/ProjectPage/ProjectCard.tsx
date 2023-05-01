@@ -142,7 +142,7 @@ const StyledCard = styled(Card)`
 `;
 
 const SlidingCard = styled(StyledCard)`
-  transform: translateX(-150%);
+  transform: translateX(-200%);
   transition: ${({ index }) => `transform 0.5s ease-in-out ${index * 0.5}s`}; // Add the delay based on the index
 
   ${({ index }) => `

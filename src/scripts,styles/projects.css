@@ -34,12 +34,6 @@
 .container::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
-/**/
-
-/*Remove scrollbar on the entire html page */
-body{
-  overflow: hidden;
-}
 
 .scroll-container::-webkit-scrollbar {
   width: 0.5em;

@@ -14,3 +14,13 @@ body {
 html[data-theme="light"] .project-modal .modal-text {
   color: #333; /* default light mode text color */
 }
+
+/* styling for the external links in the footer of the homepage */
+
+.footer-link {
+  color: #666666;
+}
+
+.footer-link:hover {
+  color: #999999;
+}
