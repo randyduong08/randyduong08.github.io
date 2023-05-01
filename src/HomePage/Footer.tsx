@@ -10,7 +10,8 @@ import resumeIcon from "../Images/resumeAlternateIcon.png";
 function Footer(){
     return(
         <StyledFooter className="header-footer">
-        <div className="row">
+          <div className="container">
+          <div className="row">
           <div className="col-sm-4">
             <h6>Contact information</h6>
             <p className="footer-text">Randy Duong</p>
@@ -56,6 +57,7 @@ function Footer(){
             </p>
           </div>
         </div>
+          </div>
       </StyledFooter>
     );
 
