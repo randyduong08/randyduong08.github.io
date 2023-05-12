@@ -1,0 +1,26 @@
+/* everything in here relates to colouring off stuff on page for light mode
+*/
+
+body {
+  background-color: #fff; /* default light mode background color */
+  color: #333; /* default light mode text color */
+}
+
+.header-footer {
+  background-color: #e0dddd;
+  color: #666666;
+}
+
+html[data-theme="light"] .project-modal .modal-text {
+  color: #333; /* default light mode text color */
+}
+
+/* styling for the external links in the footer of the homepage */
+
+.footer-link {
+  color: #666666;
+}
+
+.footer-link:hover {
+  color: #999999;
+}
