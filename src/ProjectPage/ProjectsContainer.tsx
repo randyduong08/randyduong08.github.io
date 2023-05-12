@@ -3,8 +3,18 @@ import ProjectCard from "./ProjectCard";
 import mkimg from '../Images/mk8.jpg';
 import petimg from '../Images/pet.jpg';
 import uimg from '../Images/Unity.png';
+import dimg from '../Images/discordBot.png';
 
 const projectData = [
+    {
+        title:"Discord Math Assistant GPT-Bot",
+        description:"Bot that helps you with your math questions in Discord",
+        imgSrc:dimg,
+        githubLink:"https://github.com/randyduong08/GrugBug",
+        modalTitle:"Discord GPT-Bot",
+        modalDesc:"Developed an interactive Discord bot that leverages OpenAI's GPT-3.5 Turbo model and pytesseract to scan and interpret user submitted math question images through Discord, and attempts to solve them"
+    }
+    ,
     {
         title:"Twitch AI Outcome Predictor",
         description:"Predict the outcome of MK games on Twitch streams",
